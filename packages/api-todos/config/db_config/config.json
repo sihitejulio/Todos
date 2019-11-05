@@ -1,0 +1,9 @@
+{
+    "username": "root",
+    "password": "12345",
+    "database": "todos",
+    "host": "localhost",
+    "dialect": "mysql",
+    "timezone": "+7:00",
+    "logging": false
+}

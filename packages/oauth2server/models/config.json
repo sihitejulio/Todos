@@ -1,0 +1,8 @@
+{
+    "username": "root",
+    "password": "12345",
+    "database": "auth",
+    "host": "localhost",
+    "dialect": "mysql",
+    "timezone": "+7:00"
+}
