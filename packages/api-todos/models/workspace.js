@@ -18,5 +18,12 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false,
         underscored: true,
     });
+
+    Workspace.associate =  function associate(models) {
+        Workspace.hasMany(models.Todo, {
+            foreignKey: 'id_workspace',
+        });
+    };
+
     return  Workspace;
 }

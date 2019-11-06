@@ -37,7 +37,11 @@ async function getWorkspace(req, res) {
     let offset = 0;
     let numberPage = 1; // exmple
 
-    await Workspace.findAndCountAll()
+    await Workspace.findAndCountAll({
+        include: [{
+            model: Todo,
+        }]
+    })
         .then(async function (data) {
             let page = 1;
             if (numberPage > 1) {
@@ -48,9 +52,12 @@ async function getWorkspace(req, res) {
             offset = limit * (page - 1);
 
             await Workspace.findAll({
+                include: [{
+                    model: Todo,
+                }],
                 limit: limit,
-                offset: offset,
-                raw: true
+                offset: offset
+                // raw: true
             }).then(function (result) {
                 if (result) {
                     res.status(200).json({
@@ -73,6 +80,9 @@ async function getWorkspace(req, res) {
             })
         })
 }
+
+
+
 
 async function getWorkspaceById(req, res) {
     let id = req.params.id

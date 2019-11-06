@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+.workspace-top{
+  height: 400px;
+}
+
+.workspace-bottom{
+  height: 50px;
+}
+

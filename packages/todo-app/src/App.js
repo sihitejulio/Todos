@@ -1,24 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+
+import Head from './containers/Head';
+import AddTodo from './containers/AddTodo';
+import TodoItem from './containers/TodoItem';
+import WorkSpace from './containers/WorkSpace';
+
+const { Header, Content, Sider } = Layout;
+const { SubMenu } = Menu;
+
+// import './App.css'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Layout  
+          style={{
+            background: '#fff'
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <Sider width={200} style={{ background: '#f0f2f5' }}>
+            <WorkSpace/>
+          </Sider>
+          <Layout style={{ padding: '0 24px 24px', background: '#fff' }}>
+            {/* */}
+            <Head/>
+            <Content
+              style={{
+                background: '#fff',
+                padding: 24,
+                margin: 0,
+                minHeight: 480,
+              }}
+            >
+              <AddTodo/>
+              <TodoItem/>
+            </Content>
+          </Layout>
+        </Layout>
     </div>
   );
 }
