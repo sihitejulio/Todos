@@ -24,12 +24,10 @@ class Workspace extends Component {
         })
             .then(async (response) => {
                 let result = await response.json()
-                console.log(result);
                 if (result.data.length > 0) {
                     this.setState({
                         listWorkspace: result.data
                     })
-                    console.log(this.state.listWorkspace);
                 }
             }).catch(function (err) {
                 console.log(err)
@@ -96,7 +94,6 @@ class Workspace extends Component {
                                     onClick={this.getDetail}
 
                                 >
-                                   
                                    <Link to={`/${itemTodo.id}`}> {itemTodo.name}</Link>
                                 </Menu.Item>))
                             : ""
